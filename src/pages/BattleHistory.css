@@ -1,0 +1,402 @@
+.empty-history {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0 #000;
+  margin-top: 20px;
+}
+
+.battle-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.battle-history-card {
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 #000;
+  position: relative;
+}
+
+.battle-history-header {
+  padding: 15px;
+  background: var(--primary-gradient);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #000;
+  position: relative;
+}
+
+.battle-date {
+  font-size: 12px;
+}
+
+.battle-result {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.delete-battle-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-gradient);
+  color: white;
+  border: 2px solid #000;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.delete-battle-btn:hover {
+  transform: scale(1.1);
+}
+
+.battle-opponents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-bottom: 4px solid #000;
+}
+
+.battle-opponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.opponent-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.opponent-info {
+  text-align: center;
+}
+
+.opponent-name {
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.opponent-wins {
+  font-size: 12px;
+  color: #777;
+}
+
+.battle-vs {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--danger);
+}
+
+.battle-log {
+  padding: 20px;
+}
+
+.battle-log-title {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #000;
+}
+
+.battle-log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.battle-log-table th,
+.battle-log-table td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.battle-log-table th {
+  background-color: #f5f5f5;
+}
+
+.battle-log-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.battle-log-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 2px solid #000;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.battle-log-entry {
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.battle-summary {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 2px solid #000;
+}
+
+.battle-summary p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* iPad Air specific styles */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 1000px) {
+  .battle-history-card {
+    border-width: 3px;
+    box-shadow: 5px 5px 0 #000;
+  }
+
+  .battle-history-header {
+    padding: 12px;
+    border-bottom-width: 3px;
+  }
+
+  .battle-date {
+    font-size: 11px;
+  }
+
+  .battle-result {
+    font-size: 14px;
+  }
+
+  .battle-opponents {
+    padding: 15px;
+    border-bottom-width: 3px;
+  }
+
+  .opponent-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .opponent-name {
+    font-size: 13px;
+  }
+
+  .opponent-wins {
+    font-size: 11px;
+  }
+
+  .battle-vs {
+    font-size: 18px;
+  }
+
+  .battle-log {
+    padding: 15px;
+  }
+
+  .battle-log-title {
+    font-size: 14px;
+  }
+
+  .battle-log-entries {
+    max-height: 180px;
+  }
+
+  .battle-log-entry {
+    font-size: 12px;
+  }
+
+  .battle-summary p {
+    font-size: 12px;
+  }
+
+  .delete-battle-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empty-history {
+    padding: 30px;
+  }
+
+  .battle-history-header {
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .battle-date {
+    font-size: 10px;
+  }
+
+  .battle-result {
+    font-size: 14px;
+  }
+
+  .battle-opponents {
+    padding: 15px;
+  }
+
+  .opponent-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .opponent-name {
+    font-size: 12px;
+  }
+
+  .opponent-wins {
+    font-size: 10px;
+  }
+
+  .battle-vs {
+    font-size: 16px;
+  }
+
+  .battle-log {
+    padding: 15px;
+  }
+
+  .battle-log-table th,
+  .battle-log-table td {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .battle-log-entries {
+    max-height: 150px;
+  }
+
+  .battle-log-entry {
+    font-size: 12px;
+  }
+
+  .battle-summary {
+    padding: 8px;
+  }
+
+  .battle-summary p {
+    font-size: 12px;
+  }
+
+  .delete-battle-btn {
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-history {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .battle-history-header {
+    padding: 8px;
+  }
+
+  .battle-date {
+    font-size: 8px;
+  }
+
+  .battle-result {
+    font-size: 12px;
+  }
+
+  .battle-opponents {
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .battle-opponent {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .opponent-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .battle-vs {
+    font-size: 14px;
+  }
+
+  .battle-log {
+    padding: 10px;
+  }
+
+  .battle-log-title {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .battle-log-table th,
+  .battle-log-table td {
+    padding: 5px;
+    font-size: 8px;
+  }
+
+  .battle-log-entries {
+    max-height: 120px;
+    padding: 8px;
+    border-width: 1px;
+  }
+
+  .battle-log-entry {
+    font-size: 9px;
+    padding: 3px;
+  }
+
+  .battle-summary {
+    padding: 6px;
+    border-width: 1px;
+  }
+
+  .battle-summary p {
+    font-size: 9px;
+    margin: 3px 0;
+  }
+
+  .delete-battle-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    border-width: 1px;
+  }
+}

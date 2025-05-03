@@ -1,0 +1,399 @@
+.stat-battle-container {
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 6px 6px 0 #000;
+  position: relative;
+}
+
+.stat-battle-empty {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.stat-battle-arena {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pokemon-fighter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  transition: transform 0.3s;
+}
+
+.pokemon-fighter.attacking {
+  animation: attack 0.8s ease-in-out;
+}
+
+@keyframes attack {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(20px) scale(1.1);
+  }
+  40% {
+    transform: translateX(40px) scale(1.2);
+  }
+  60% {
+    transform: translateX(20px) scale(1.1);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fighter-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.fighter-name {
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.battle-vs {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--danger);
+}
+
+.battle-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: var(--secondary-gradient);
+  color: white;
+  font-size: 16px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.stat-battle-result {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.battle-result-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.stat-comparison-table {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.stat-comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #000;
+}
+
+.stat-comparison-table th,
+.stat-comparison-table td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.stat-comparison-table th {
+  background-color: var(--primary);
+  color: white;
+}
+
+.stat-comparison-table .winner-cell {
+  background-color: var(--success);
+  color: white;
+  font-weight: bold;
+}
+
+.stat-comparison-table .tie-row {
+  background-color: #f5f5f5;
+}
+
+.stat-comparison-table .total-row {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+.hidden-row td {
+  color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.hidden-row td::after {
+  content: "...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.battle-stats-comparison {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.battle-stats-column {
+  width: 45%;
+}
+
+.favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: var(--accent);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.favorite-button.active {
+  color: var(--accent);
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.favorite-button:active {
+  transform: scale(0.9);
+}
+
+.current-comparison {
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: var(--primary);
+  color: white;
+  border: 3px solid #000;
+  animation: pulse 1.5s infinite;
+}
+
+.battle-log-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border: 3px solid #000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.battle-log-title {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #000;
+}
+
+.battle-log-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.battle-log-entry {
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 1px dashed #ccc;
+}
+
+@media (max-width: 768px) {
+  .stat-battle-container {
+    padding: 15px;
+  }
+
+  .stat-battle-arena {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pokemon-fighter {
+    width: 100%;
+  }
+
+  .battle-vs {
+    font-size: 20px;
+  }
+
+  .fighter-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .fighter-name {
+    font-size: 14px;
+  }
+
+  .battle-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .battle-result-title {
+    font-size: 20px;
+  }
+
+  .battle-stats-comparison {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .battle-stats-column {
+    width: 100%;
+  }
+
+  .stat-comparison-table th,
+  .stat-comparison-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .current-comparison {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .battle-log-container {
+    max-height: 150px;
+  }
+
+  .battle-log-entry {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-battle-container {
+    padding: 10px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #000;
+    margin-top: 15px;
+  }
+
+  .stat-battle-empty {
+    padding: 20px;
+    font-size: 10px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .fighter-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .fighter-name {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .battle-vs {
+    font-size: 16px;
+  }
+
+  .battle-button {
+    padding: 8px 16px;
+    font-size: 10px;
+    border-width: 2px;
+    box-shadow: 2px 2px 0 #000;
+    margin: 10px auto;
+  }
+
+  .battle-result-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .stat-comparison-table th,
+  .stat-comparison-table td {
+    padding: 5px;
+    font-size: 8px;
+  }
+
+  .favorite-button {
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+  }
+
+  .current-comparison {
+    font-size: 12px;
+    padding: 6px;
+    margin: 10px 0;
+  }
+
+  .battle-log-container {
+    padding: 8px;
+    border-width: 2px;
+    max-height: 120px;
+    margin-top: 10px;
+  }
+
+  .battle-log-title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .battle-log-entry {
+    font-size: 9px;
+    padding: 3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .fighter-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stat-comparison-table th,
+  .stat-comparison-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .battle-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

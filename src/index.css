@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --primary: #3a7bd5;
+  --primary-gradient: linear-gradient(to right, #3a7bd5, #00d2ff);
+  --secondary: #ff3e61;
+  --secondary-gradient: linear-gradient(to right, #ff3e61, #ff8e53);
+  --accent: #ffde00;
+  --background: #f0f8ff;
+  --text: #333333;
+  --card-bg: #ffffff;
+  --card-gradient: linear-gradient(to bottom, #ffffff, #f0f8ff);
+  --success: #78c850;
+  --danger: #ff3e61;
+  --info: #3a7bd5;
+  --warning: #f8d030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+  image-rendering: pixelated;
+}
+
+button {
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  transition: all 0.2s;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+input,
+select {
+  font-family: "Press Start 2P", cursive;
+  padding: 8px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0px 4px,
+    4px 0px,
+    calc(100% - 4px) 0px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    0px calc(100% - 4px)
+  );
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  button,
+  input,
+  select {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+
+  button,
+  input,
+  select {
+    font-size: 8px;
+  }
+}

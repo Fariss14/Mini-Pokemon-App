@@ -1,0 +1,367 @@
+.empty-team {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  box-shadow: 6px 6px 0 #000;
+  margin-top: 20px;
+}
+
+.empty-team p {
+  margin-bottom: 20px;
+}
+
+.team-stats {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  background: var(--card-gradient);
+  border: 4px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 #000;
+  height: 300px; /* Increased height for better stat visibility */
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: var(--primary-gradient);
+  color: white;
+  border-bottom: 3px solid #000;
+}
+
+.team-card-id {
+  font-size: 12px;
+  color: white;
+}
+
+.remove-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-gradient);
+  color: white;
+  border: 2px solid #000;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.team-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-card-image-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.team-card-name {
+  font-size: 14px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.team-card-types {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-card-stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.team-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-stat-name {
+  font-size: 10px;
+  color: #777;
+}
+
+.team-stat-value {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.empty-slot {
+  background-color: #f5f5f5;
+  border: 4px dashed #ccc;
+  box-shadow: none;
+  height: 300px; /* Match the height of regular cards */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.empty-slot:hover {
+  transform: translateY(-5px);
+}
+
+.empty-slot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+}
+
+.empty-slot-plus {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.empty-slot-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.team-actions-top {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.randomize-button {
+  padding: 10px 20px;
+  background: var(--primary-gradient);
+  color: white;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.randomize-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.randomize-button:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.randomize-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.battle-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--secondary-gradient);
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.battle-link:hover {
+  transform: translateY(-2px);
+}
+
+.enemy-team-card {
+  border-color: var(--danger);
+}
+
+.enemy-team-card .team-card-header {
+  background: var(--secondary-gradient);
+  color: white;
+}
+
+.enemy-battle-link {
+  background: var(--secondary-gradient);
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .team-card,
+  .empty-slot {
+    height: 270px;
+  }
+
+  .team-card-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .team-card-name {
+    font-size: 12px;
+  }
+
+  .team-stat-name {
+    font-size: 8px;
+  }
+
+  .team-stat-value {
+    font-size: 12px;
+  }
+
+  .empty-team {
+    padding: 30px;
+  }
+
+  .randomize-button {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  .battle-link {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .team-card,
+  .empty-slot {
+    height: 240px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .team-card-header {
+    padding: 6px;
+    border-bottom-width: 2px;
+  }
+
+  .team-card-id {
+    font-size: 8px;
+  }
+
+  .team-card-image-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .team-card-name {
+    font-size: 9px;
+  }
+
+  .team-card-content {
+    padding: 8px;
+    gap: 5px;
+  }
+
+  .team-stat-name {
+    font-size: 7px;
+  }
+
+  .team-stat-value {
+    font-size: 9px;
+  }
+
+  .empty-team {
+    padding: 15px;
+    font-size: 10px;
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .empty-team p {
+    margin-bottom: 10px;
+  }
+
+  .randomize-button {
+    padding: 6px 12px;
+    font-size: 8px;
+    border-width: 2px;
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .battle-link {
+    padding: 8px 16px;
+    font-size: 10px;
+    border-width: 2px;
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .remove-button {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    border-width: 1px;
+  }
+
+  .team-stats {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .team-actions {
+    margin-top: 15px;
+  }
+
+  .team-actions-top {
+    margin-bottom: 10px;
+  }
+
+  .empty-slot {
+    border-width: 3px;
+  }
+
+  .empty-slot-plus {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .empty-slot-content p {
+    font-size: 9px;
+  }
+}
